@@ -19,13 +19,13 @@ public class Orcamento {
         Orcamento Valores = new Orcamento();
         // Pronto. Só tinha que instanciar e chamar no local preferível.
         Main main = new Main();
-
+    
         // Exibir opções de produtos principais
         System.out.println("Escolha do Plano:");
         System.out.println("1. Plano Anual / R$80,00");
         System.out.println("2. Plano Mensal / R$100,00");
         System.out.println("Opção: ");
-
+    
         //case switch
         int opcao = scanner.nextInt();
         double precoInicial = 0.00;
@@ -37,13 +37,13 @@ public class Orcamento {
                 precoInicial = Valores.precoPlanoMensal;
                 break;
             default:
-                System.out.println("Opçao errada");
+                System.out.println("Opção errada");
                 return;
         }
         main.clearScreen();
         System.out.println("Preço do plano escolhido R$"+precoInicial);
-
-        
+    
+    
         //exibir subprodutos
         System.out.println("Opções de aulas e treinos."+ 
         "-> Dança custa R$40,00 "+
@@ -72,8 +72,11 @@ public class Orcamento {
                 System.out.println(precoInicial);
                 return;
         }
-        
-        System.out.println("O valor da sua mesalidade ficou por R$" + precoInicial);
+    
+        // Atribuição do preço final ao atributo precoFinal
+        precoFinal = precoInicial;
+    
+        System.out.println("O valor da sua mensalidade ficou por R$" + precoInicial);
     } 
     
     @Override

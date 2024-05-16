@@ -17,23 +17,35 @@ public class CadastroUsuario {
 
         System.out.println("Digite o email do usuário:");
         String email = scanner.nextLine();
+        while (!email.contains("@")) {
+            System.out.println("Email inválido. Por favor, digite um email válido:");
+            email = scanner.nextLine();
+        }
 
         System.out.println("Digite o cpf do usuário:");
         String cpf = scanner.nextLine();
+        while (cpf.length() != 11) {
+            System.out.println("CPF inválido. Por favor, digite um CPF válido com 11 dígitos:");
+            cpf = scanner.nextLine();
+        }
 
         System.out.println("Digite o telefone do usuário:");
-        String numeroTelefone= scanner.nextLine();
+        String numeroTelefone = scanner.nextLine();
+        while (numeroTelefone.length() != 12) {
+            System.out.println("Número de telefone inválido. Por favor, digite um número de telefone válido com 12 dígitos:");
+            numeroTelefone = scanner.nextLine();
+        }
 
         Orcamento plano = null; // Declarar o objeto orcamento aqui
 
         // Adicionando opção para criar orçamento
         System.out.println("Deseja criar um orçamento para este usuário? (S/N)");
-        String resposta = scanner.next(); // Use next() em vez de nextLine() para evitar problemas com a captura do Ente
+        String resposta = scanner.next(); // Use next() em vez de nextLine() para evitar problemas com a captura do Enter
         if (resposta.equalsIgnoreCase("S")) {
             plano = new Orcamento(); // Inicializar o objeto orcamento se a resposta for sim
             plano.calcularOrcamento();
         }
-        
+
         Usuario novoUsuario = new Usuario(nome, cpf, email, numeroTelefone, plano);
         usuarios.add(novoUsuario);
 
@@ -66,6 +78,7 @@ public class CadastroUsuario {
 
         System.out.println("Deseja atualizar o usuário (U) ou o orçamento (O)?");
         String resposta = scanner.next();
+        scanner.nextLine(); // Limpar o buffer do scanner
         if (resposta.equalsIgnoreCase("U")) {
             System.out.println("Digite o novo nome do usuário: ");
             String nome = scanner.nextLine();
@@ -73,14 +86,26 @@ public class CadastroUsuario {
 
             System.out.println("Digite o novo cpf do usuário: ");
             String cpf = scanner.nextLine();
+            while (cpf.length() != 11) {
+                System.out.println("CPF inválido. Por favor, digite um CPF válido com 11 dígitos:");
+                cpf = scanner.nextLine();
+            }
             usuarioSelecionado.setCpf(cpf);
 
             System.out.println("Digite o novo email do usuário: ");
             String email = scanner.nextLine();
+            while (!email.contains("@")) {
+                System.out.println("Email inválido. Por favor, digite um email válido:");
+                email = scanner.nextLine();
+            }
             usuarioSelecionado.setEmail(email);
 
             System.out.println("Digite o novo telefone do usuário: ");
             String numeroTelefone = scanner.nextLine();
+            while (numeroTelefone.length() != 12) {
+                System.out.println("Número de telefone inválido. Por favor, digite um número de telefone válido com 12 dígitos:");
+                numeroTelefone = scanner.nextLine();
+            }
             usuarioSelecionado.setNumeroTelefone(numeroTelefone);
 
             System.out.println("Usuário modificado com sucesso!");
@@ -118,4 +143,3 @@ public class CadastroUsuario {
         System.out.println("Usuário deletado com sucesso!");
     }
 }
-
