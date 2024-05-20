@@ -3,11 +3,22 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        //novo
+        String [][] data = new String[1000][5];
+        
         Scanner scanner = new Scanner(System.in);
         ManipuladorDados manipularDados = new ManipuladorDados();
         CadastroUsuario cadastroUsuario = new CadastroUsuario(manipularDados);
-        // ArrayList<Usuario> usuarios = manipularDados.recuperarUsuarios();
+        //ArrayList<Usuario> usuarios = manipularDados.recuperarUsuarios();
+        Calc OI = new Calc();
+        OI.IMC();
         
+        ////novo, fecha la em baixo
+        int h = 1;
+        String status = "on";
+        while(status.equals("on")) {
+
         int opcao;
         do {
             System.out.println("Escolha uma opção:");
@@ -32,14 +43,14 @@ public class Main {
                     clearScreen();
                     cadastroUsuario.deletarUsuario();
                     break;
-                // case 4:
-                //     clearScreen();
-                //     manipularDados.salvarUsuarios(usuarios);
-                //     break;
-                // case 5:
-                //     clearScreen();
-                //     usuarios = manipularDados.recuperarUsuarios();
-                //     break;
+                 case 4:
+                     clearScreen();
+                     manipularDados.salvarUsuarios(usuarios);
+                     break;
+                 case 5:
+                     clearScreen();
+                     usuarios = manipularDados.recuperarUsuarios();//
+                     break;
                 case 0:
                     System.out.println("Saindo...");
                     break;
@@ -48,7 +59,7 @@ public class Main {
                     break;
             }
         } while (opcao != 0);
-
+        }///// fecho 
         scanner.close();
     }
     
