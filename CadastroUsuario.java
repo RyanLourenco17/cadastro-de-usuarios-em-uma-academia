@@ -36,18 +36,19 @@ public class CadastroUsuario {
             numeroTelefone = scanner.nextLine();
         }
 
-        Orcamento plano = null; // Declarar o objeto orcamento aqui
+        Orcamento plano = null; 
 
-        // Adicionando opção para criar orçamento
         System.out.println("Deseja criar um orçamento para este usuário? (S/N)");
-        String resposta = scanner.next(); // Use next() em vez de nextLine() para evitar problemas com a captura do Enter
+        String resposta = scanner.next();
         if (resposta.equalsIgnoreCase("S")) {
-            plano = new Orcamento(); // Inicializar o objeto orcamento se a resposta for sim
+            plano = new Orcamento();
             plano.calcularOrcamento();
         }
 
         Usuario novoUsuario = new Usuario(nome, cpf, email, numeroTelefone, plano);
         usuarios.add(novoUsuario);
+
+        manipuladorDados.salvarUsuario(novoUsuario);
 
         System.out.println("Usuário criado com sucesso!");
     }

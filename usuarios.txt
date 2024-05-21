@@ -1,0 +1,2 @@
+Usuario{nome='Ryan', cpf=12345678910, email='ryan@gmail.com', telefone='222222222222', Preço final do orçamento: R$130.0}
+Usuario{nome='Matheus', cpf=32112345678, email='matheus@hotmail.com', telefone='551156789102', Preço final do orçamento: R$145.0}

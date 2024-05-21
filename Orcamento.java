@@ -1,10 +1,8 @@
 import java.util.Scanner;
 
 public class Orcamento {
-    //preço dos produtos principais
     double precoPlanoAnual = 80.00;
     double precoPlanoMensal = 100.00;
-    //Percentuais de alteração dos subprodutos
     double percentualDanca = 40;
     double percentualPersonal = 65;
     double percentualDefesaP = 50;
@@ -12,21 +10,22 @@ public class Orcamento {
     double precoInicial = 0.00;
     double precoFinal;
 
+    public Orcamento() {}
+
+    public Orcamento(double precoFinal) {
+        this.precoFinal = precoFinal;
+    }
 
     public void calcularOrcamento() {
         Scanner scanner = new Scanner(System.in);
-        // instanciar
         Orcamento Valores = new Orcamento();
-        // Pronto. Só tinha que instanciar e chamar no local preferível.
-        Main main = new Main();
-    
-        // Exibir opções de produtos principais
+        Main.clearScreen();
+
         System.out.println("Escolha do Plano:");
         System.out.println("1. Plano Anual / R$80,00");
         System.out.println("2. Plano Mensal / R$100,00");
         System.out.println("Opção: ");
     
-        //case switch
         int opcao = scanner.nextInt();
         double precoInicial = 0.00;
         switch (opcao){
@@ -40,11 +39,9 @@ public class Orcamento {
                 System.out.println("Opção errada");
                 return;
         }
-        main.clearScreen();
+        Main.clearScreen();
         System.out.println("Preço do plano escolhido R$"+precoInicial);
     
-    
-        //exibir subprodutos
         System.out.println("Opções de aulas e treinos."+ 
         "-> Dança custa R$40,00 "+
         "-> Personal custa R$65,00 "+
@@ -73,7 +70,6 @@ public class Orcamento {
                 return;
         }
     
-        // Atribuição do preço final ao atributo precoFinal
         precoFinal = precoInicial;
     
         System.out.println("O valor da sua mensalidade ficou por R$" + precoInicial);
@@ -81,7 +77,7 @@ public class Orcamento {
     
     @Override
     public String toString() {
-        // Retornar uma representação legível do orçamento
         return "Preço final do orçamento: R$" + precoFinal;
     }
 }
+
