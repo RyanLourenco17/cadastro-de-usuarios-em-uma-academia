@@ -12,10 +12,11 @@ public class Main {
         int opcao;
         do {
             System.out.println("Escolha uma opção:");
-            System.out.println("1. Criar usuário");
-            System.out.println("2. Modificar usuário");
-            System.out.println("3. Deletar usuário");
+            System.out.println("1. Cadastrar Cliente");
+            System.out.println("2. Modificar Cliente");
+            System.out.println("3. Deletar Cliente");
             System.out.println("4. Calcular IMC");
+            System.out.println("5. Exibir Dados");
             System.out.println("0. Sair");
             opcao = scanner.nextInt();
 
@@ -36,6 +37,10 @@ public class Main {
                     clearScreen();
                     calculadoraIMC.calcularIMC();
                     break;
+                case 5:
+                    clearScreen();
+                    ManipuladorDados.ExibirUsuario();
+                    break;
                 case 0:
                     System.out.println("Saindo...");
                     break;
@@ -44,7 +49,6 @@ public class Main {
                     break;
             }
         } while (opcao != 0);
-
         scanner.close();
     }
 

@@ -42,10 +42,10 @@ public class Orcamento {
         Main.clearScreen();
         System.out.println("Preço do plano escolhido R$"+precoInicial);
     
-        System.out.println("Opções de aulas e treinos."+ 
-        "-> Dança custa R$40,00 "+
-        "-> Personal custa R$65,00 "+
-        "-> Defesa Pessoal custa R$50,00");
+        System.out.println("Opções de aulas e treinos."+"\n"+
+                "-> Dança custa R$40,00 "+"\n"+
+                "-> Personal custa R$65,00 "+"\n"+
+                "-> Defesa Pessoal custa R$50,00");
         System.out.println("1. Dança");
         System.out.println("2. Personal");
         System.out.println("3. Defesa Pessoal");
@@ -73,6 +73,7 @@ public class Orcamento {
         precoFinal = precoInicial;
     
         System.out.println("O valor da sua mensalidade ficou por R$" + precoInicial);
+        Main.clearScreen();
     } 
     
     @Override

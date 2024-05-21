@@ -1,2 +1,5 @@
 Usuario{nome='Ryan', cpf=12345678910, email='ryan@gmail.com', telefone='222222222222', Preço final do orçamento: R$130.0}
 Usuario{nome='Matheus', cpf=32112345678, email='matheus@hotmail.com', telefone='551156789102', Preço final do orçamento: R$145.0}
+Usuario{nome='Maria', cpf=98765412309, email='maria@gmail.com', telefone='551912345678', Preço final do orçamento: R$165.0}
+Usuario{nome='Vanessa', cpf=50870890812, email='vanessa@outlook.com', telefone='552345678913', Preço final do orçamento: R$80.0}
+Usuario{nome='Arthur', cpf=30770340345, email='reiarthur@gmail.com', telefone='551908765432', Preço final do orçamento: R$100.0}

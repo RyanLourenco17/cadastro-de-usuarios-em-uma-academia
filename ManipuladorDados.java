@@ -14,7 +14,15 @@ public class ManipuladorDados {
             System.out.println("Erro ao salvar usuário: " + e.getMessage());
         }
     }
+    public static void ExibirUsuario() {
+        try (FileReader arquivo = new FileReader(FILE_NAME);
+             BufferedReader abrir = new BufferedReader(arquivo)) {
+            String linha;
+            while ((linha = abrir.readLine()) != null) {
+                System.out.println(linha);
+            }
+        } catch (IOException e) {
+            System.out.println("Erro ao abrir arquivo: " + e.getMessage());
+        }
+    }
 }
-
-
-
